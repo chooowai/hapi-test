@@ -1,0 +1,24 @@
+{
+  "name": "hapi-test",
+  "version": "1.0.0",
+  "description": "Hapi Test Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "lab -v ./tests/*.test.js",
+    "start": "node index.js"
+  },
+  "author": "chooowai",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/code": "^8.0.3",
+    "@hapi/hapi": "^20.1.2",
+    "@hapi/inert": "^6.0.3",
+    "@hapi/lab": "^24.1.1",
+    "@hapi/vision": "^6.0.1",
+    "handlebars": "^4.7.7",
+    "hapi-swagger": "^14.1.0",
+    "joi": "^17.4.0",
+    "lab": "^18.0.2",
+    "node-fetch": "^2.6.1"
+  }
+}

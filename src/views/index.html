@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <style>
+            table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+            th, td {
+                border: 1px solid gray;
+                padding: 5px;
+            }
+            img {
+                width: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Watchers</th>
+                        <th>URL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- loop and show result from Github -->
+                    {{#each result }}
+                        <tr>
+                            <td>{{this.id}}</td>
+                            <td>{{this.name}}</td>
+                            <td>{{this.description}}</td>
+                            <td>{{this.watchers_count}}</td>
+                            <td>{{this.url}}</td>
+                        </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+            <!-- First Page -->
+            <a href="http://localhost:3000/?page={{firstPage}}">First</a>
+            <!-- Previous Page only shows if there is previous -->
+            {{#if previousPage}}
+                <a href="http://localhost:3000/?page={{previousPage}}">Previous</a>
+            {{/if}}
+            <!-- Next Page only shows if there is next -->
+            {{#if nextPage}}
+                <a href="http://localhost:3000/?page={{nextPage}}">Next</a>
+            {{/if}}
+            <!-- Last Page -->
+            <a href="http://localhost:3000/?page={{lastPage}}">Last</a>
+        </div>
+    </body>
+</html>

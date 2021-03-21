@@ -1,0 +1,2 @@
+# hapi-test
+Testing Hapi

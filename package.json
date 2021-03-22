@@ -4,7 +4,7 @@
   "description": "Hapi Test Project",
   "main": "index.js",
   "scripts": {
-    "test": "lab -v ./tests/*.test.js",
+    "test": "lab -v -l ./tests/*.test.js",
     "start": "node index.js"
   },
   "author": "chooowai",

@@ -5,7 +5,7 @@ const { expect } = require('@hapi/code');
 const { afterEach, beforeEach, describe, it } = exports.lab = Lab.script();
 const { init } = require('../src/server');
 
-describe('Organizer Test', () => {
+describe('Organizer Integration Test', () => {
     let server;
     const inputJson = {"0":
                             [{"id": 10,

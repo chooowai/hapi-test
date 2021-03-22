@@ -35,5 +35,6 @@ GithubController.prototype.render = async(request, reply) => {
 };
 
 module.exports = {
-    GithubController: GithubController
+    GithubController: GithubController,
+    render: GithubController.prototype.render
 }

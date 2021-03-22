@@ -18,9 +18,18 @@ const swaggerOptions = {
 // Register the routes from routes file
 server.route(routes);
 
+// Register and set up Vision for frontend
+server.register(require('@hapi/vision'));
+server.views({
+    engines: {
+        html: require('handlebars')
+    },
+    relativeTo: __dirname,
+    path: 'views'
+});
+
 // Initilize server
 exports.init = async () => {
-
     await server.initialize();
     return server;
 };
@@ -35,17 +44,6 @@ exports.start = async () => {
             options: swaggerOptions
         }
     ]);
-
-    // Setup view for frontend
-    await server.register(require('@hapi/vision'));
-
-    server.views({
-        engines: {
-            html: require('handlebars')
-        },
-        relativeTo: __dirname,
-        path: 'views'
-    });
 
     await server.start();
     console.log(`Server running at: ${server.info.uri}`);
